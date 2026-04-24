@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Deepfake Detector</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #0f0f0f;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            width: 100%;
+            background: #1a1a1a;
+            padding: 15px 0;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.6);
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        .nav-item {
+            color: #4CAF50;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 8px 14px;
+            border-radius: 6px;
+            transition: 0.2s;
+        }
+
+        .nav-item:hover {
+            background: #333;
+        }
+
+        .container {
+            background: #1a1a1a;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            width: 400px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.6);
+            margin: 140px auto 0 auto;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 28px;
+            letter-spacing: 1px;
+        }
+
+        input[type="file"] {
+            margin: 20px 0;
+            padding: 10px;
+            background: #333;
+            border-radius: 6px;
+            border: 1px solid #444;
+            color: #ccc;
+        }
+
+        button {
+            background: #4CAF50;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 6px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="/" class="nav-item">Image Detector</a>
+        <a href="/video" class="nav-item">Video Frame Extractor</a>
+    </div>
+
+    <div class="container">
+        <h1>Deepfake Detector</h1>
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="image" accept="image/*" required>
+            <br>
+            <button type="submit">Analyze Image</button>
+        </form>
+    </div>
+
+</body>
+</html>
+

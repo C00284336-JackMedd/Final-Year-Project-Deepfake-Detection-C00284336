@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detection Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #0f0f0f;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            width: 100%;
+            background: #1a1a1a;
+            padding: 15px 0;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.6);
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        .nav-item {
+            color: #4CAF50;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 8px 14px;
+            border-radius: 6px;
+            transition: 0.2s;
+        }
+
+        .nav-item:hover {
+            background: #333;
+        }
+
+        .container {
+            background: #1a1a1a;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            width: 450px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.6);
+            margin: 140px auto 0 auto;
+        }
+
+        img {
+            width: 300px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 2px solid #333;
+        }
+
+        .label {
+            font-size: 26px;
+            margin-bottom: 10px;
+        }
+
+        .real {
+            color: #4CAF50;
+        }
+
+        .fake {
+            color: #ff4444;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="/" class="nav-item">Image Detector</a>
+        <a href="/video" class="nav-item">Video Frame Extractor</a>
+    </div>
+
+    <div class="container">
+        <img src="{{ image_path }}">
+        <div class="label {% if label == 'REAL' %}real{% else %}fake{% endif %}">
+            {{ label }} ({{ confidence }})
+        </div>
+    </div>
+
+</body>
+</html>
